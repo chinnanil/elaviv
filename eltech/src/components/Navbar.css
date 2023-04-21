@@ -1,0 +1,131 @@
+.navbar {
+  background-color: #fff;
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.2rem;
+  position: relative;
+  z-index: 10;
+}
+
+.navbar-logo {
+  color: #000;
+  font-size: 2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-decoration: none;
+  margin-left: 20px;
+}
+
+.navbar-company {
+  color: #000;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-left: 10px;
+}
+
+.menu-icon {
+  display: none;
+  color: #000;
+  font-size: 2rem;
+  cursor: pointer;
+  margin-right: 20px;
+}
+
+.fa-bars,
+.fa-times {
+  transition: all 0.3s ease-in-out;
+}
+
+.nav-menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  text-align: center;
+  margin-right: -22px;
+}
+
+.nav-item {
+  height: 80px;
+  position: relative;
+}
+
+.nav-links {
+  color: #000;
+  text-decoration: none;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 0 1rem;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  transition: all 0.3s ease-in-out;
+}
+
+.nav-links:hover {
+  color: #7c37ad;
+}
+
+.dropdown {
+  position: absolute;
+  top: 80px;
+  left: 0;
+  width: 200px;
+  background-color: #fff;
+  display: none;
+  z-index: 1;
+}
+
+.dropdown-item {
+  display: block;
+  padding: 10px;
+  text-align: left;
+}
+
+.dropdown-item:hover {
+  background-color: #7c37ad;
+  color: #fff;
+}
+
+@media screen and (max-width: 960px) {
+  .navbar {
+    position: relative;
+  }
+
+  .menu-icon {
+    display: block;
+  }
+
+  .nav-menu {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 80px;
+    left: -100%;
+    opacity: 1;
+    transition: all 0.5s ease-in-out;
+    background-color: #fff;
+  }
+
+  .nav-menu.active {
+    left: 0;
+    opacity: 1;
+    transition: all 0.5s ease-in-out;
+    z-index: 1;
+  }
+
+  .dropdown {
+    position: static;
+    width: 100%;
+    display: none;
+  }
+
+  .nav-item:hover .dropdown {
+    display: block;
+  }
+}
